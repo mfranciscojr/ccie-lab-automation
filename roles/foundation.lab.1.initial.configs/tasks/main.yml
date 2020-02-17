@@ -4,13 +4,11 @@
    ios_facts:
     gather_subset: min
 
-
  - name: Configure R1
    when: ansible_net_hostname == 'R1'
    ios_config:
     src: roles/foundation.lab.1.initial.configs/files/R1.txt
     save_when: modified
-
 
  - name: Configure R2
    when: ansible_net_hostname == 'R2'
@@ -65,4 +63,3 @@
    ios_config:
     src: roles/foundation.lab.1.initial.configs/files/R10.txt
     save_when: modified
-                
