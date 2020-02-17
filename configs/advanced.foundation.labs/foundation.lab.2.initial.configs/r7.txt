@@ -1,0 +1,13 @@
+
+interface Loopback0
+ ip address 7.7.7.7 255.255.255.255
+ ipv6 address 2001:7:7:7::7/128
+!
+interface GigabitEthernet0/1
+ no shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/1.57
+ encapsulation dot1Q 57
+ ip address 156.1.57.7 255.255.255.0
+ ipv6 address 2001:156:1:57::7/64

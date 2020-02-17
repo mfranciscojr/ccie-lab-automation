@@ -1,6 +1,6 @@
 ---
  - name: Wait for host
-   hosts: all
+   hosts: routers,switch
    tasks:
     - name: Pre-Check if host is reachable
       wait_for:
