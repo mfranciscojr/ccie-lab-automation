@@ -1,8 +1,5 @@
 ---
 # tasks file for foundation.lab.1.initial.configs
- - name: Wait 600 seconds for target connection to become reachable/usable
-   wait_for_connection:
-   
  - name: Gather Minimum Facts
    ios_facts:
     gather_subset: min
