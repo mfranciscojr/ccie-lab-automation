@@ -1,0 +1,10 @@
+
+interface Loopback0
+ ip address 24.24.24.24 255.255.255.255
+ ipv6 address 2001:24:24:24::24/128
+interface Vlan1
+ no shutdown
+!
+interface Vlan124
+ ip address 156.1.124.24 255.255.255.0
+ ipv6 address 2001:156:1:124::24/64

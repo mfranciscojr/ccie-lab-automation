@@ -1,0 +1,15 @@
+---
+ - name: Wait for host
+   hosts: all
+   tasks:
+    - name: Pre-Check if host is reachable
+      wait_for:
+       hosts: all
+       port: 22
+       state: started
+       delay: 300
+       register: host_accessible
+       failed_when: False
+       sleep: 10
+      register: ok
+      failed_when: false

@@ -1,0 +1,14 @@
+
+interface Loopback0
+ ip address 10.10.10.10 255.255.255.255
+ ipv6 address 2004:10:10:10::10/128
+!
+interface GigabitEthernet0/1
+ no shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/1.210
+ encapsulation dot1Q 210
+ ip address 128.10.210.10 255.255.255.0
+ ipv6 address 2004:128:10:210::10/64
+!

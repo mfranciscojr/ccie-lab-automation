@@ -1,0 +1,7 @@
+interface Loopback0
+ ip address 22.22.22.22 255.255.255.255
+ ipv6 address 2001:22:22:22::22/128
+!
+interface Vlan222
+ ip address 156.1.222.22 255.255.255.0
+ ipv6 address 2001:156:1:222::22/64

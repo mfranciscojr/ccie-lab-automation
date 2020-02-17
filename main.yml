@@ -1,0 +1,53 @@
+---
+ - name: Copy Lab
+   include: playbooks/copyLab.yml
+   tags:
+    - copylab
+
+ - name: Device Check
+   include: playbooks/device-check.yml
+   tags:
+    - device_check
+
+ - name: Reset Lab to Default
+   include: playbooks/wipe_nodes.yml
+   tags:
+    - wipe_nodes
+
+ - name: Start Node 1 to 10
+   include: playbooks/start_nodes.yml
+   tags:
+    - start_nodes
+
+ - name: Start All Nodes
+   include: playbooks/start_allnodes.yml
+   tags:
+    - start_allnodes
+
+ - name: Deploy configs
+   hosts: router_group1
+   roles:
+    - foundation_lab1_initial
+   tags:
+    - initial_1
+
+ - name: Deploy configs
+   hosts: router_group1
+   roles:
+    - foundation_lab2_initial
+   tags:
+    - initial_2
+
+ - name: Deploy configs
+   hosts: router_group1
+   roles:
+    - foundation_lab3_initial
+   tags:
+    - initial_3
+
+ - name: Deploy configs
+   hosts: router_group1
+   roles:
+    - authenticating.bgp.peerings
+   tags:
+    - authenticating.bgp.peerings

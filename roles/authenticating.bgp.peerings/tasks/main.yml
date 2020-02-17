@@ -1,17 +1,66 @@
 ---
-# tasks file for authenticating.bgp.peerings
- - name: Do not gather hardware facts
+# tasks file for foundation.lab.1.initial.configs
+ - name: Gather Minimum Facts
    ios_facts:
     gather_subset: min
+    timeout: 30
 
  - name: Configure R1
    when: ansible_net_hostname == 'R1'
    ios_config:
-    src: ./roles/authenticating.bgp.peerings/files/r1.txt
+    src: ../configs/advanced.technology.labs/authenticating.bgp.peerings/R1.txt
     save_when: modified
 
  - name: Configure R2
    when: ansible_net_hostname == 'R2'
    ios_config:
-    src: ./roles/authenticating.bgp.peerings/files/r2.txt
+    src: ../configs/advanced.technology.labs/authenticating.bgp.peerings/R2.txt
+    save_when: modified
+    
+ - name: Configure R3
+   when: ansible_net_hostname == 'R3'
+   ios_config:
+    src: ../configs/advanced.technology.labs/authenticating.bgp.peerings/R3.txt
+    save_when: modified
+
+ - name: Configure R4
+   when: ansible_net_hostname == 'R4'
+   ios_config:
+    src: ../configs/advanced.technology.labs/authenticating.bgp.peerings/R4.txt
+    save_when: modified
+
+ - name: Configure R5
+   when: ansible_net_hostname == 'R5'
+   ios_config:
+    src: ../configs/advanced.technology.labs/authenticating.bgp.peerings/R5.txt
+    save_when: modified
+
+ - name: Configure R6
+   when: ansible_net_hostname == 'R6'
+   ios_config:
+    src: ../configs/advanced.technology.labs/authenticating.bgp.peerings/R6.txt
+    save_when: modified
+
+ - name: Configure R7
+   when: ansible_net_hostname == 'R7'
+   ios_config:
+    src: ../configs/advanced.technology.labs/authenticating.bgp.peerings/R7.txt
+    save_when: modified
+
+ - name: Configure R8
+   when: ansible_net_hostname == 'R8'
+   ios_config:
+    src: ../configs/advanced.technology.labs/authenticating.bgp.peerings/R8.txt
+    save_when: modified
+
+ - name: Configure R9
+   when: ansible_net_hostname == 'R9'
+   ios_config:
+    src: ../configs/advanced.technology.labs/authenticating.bgp.peerings/R9.txt
+    save_when: modified
+
+ - name: Configure R10
+   when: ansible_net_hostname == 'R10'
+   ios_config:
+    src: ../configs/advanced.technology.labs/authenticating.bgp.peerings/R10.txt
     save_when: modified

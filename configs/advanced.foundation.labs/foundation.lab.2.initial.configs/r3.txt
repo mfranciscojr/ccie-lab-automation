@@ -1,0 +1,33 @@
+
+crypto pki trustpoint TP-self-signed-2424681208
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2424681208
+ revocation-check none
+ rsakeypair TP-self-signed-2424681208
+!
+!
+crypto pki certificate chain TP-self-signed-2424681208
+
+interface Loopback0
+ ip address 3.3.3.3 255.255.255.255
+ ipv6 address 2001:3:3:3::3/128
+!
+interface GigabitEthernet0/1
+ no shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/1.35
+ encapsulation dot1Q 35
+ ip address 156.1.35.3 255.255.255.0
+ ipv6 address 2001:156:1:35::3/64
+!
+interface GigabitEthernet0/1.39
+ encapsulation dot1Q 39
+ ip address 156.1.39.3 255.255.255.0
+ ipv6 address 2001:156:1:39::3/64
+!
+interface GigabitEthernet0/1.103
+ encapsulation dot1Q 103
+ ip address 156.1.103.3 255.255.255.0
+ ipv6 address 2001:156:1:103::3/64
+

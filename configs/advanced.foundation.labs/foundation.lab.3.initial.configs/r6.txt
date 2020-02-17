@@ -1,0 +1,28 @@
+interface Loopback0
+ ip address 6.6.6.6 255.255.255.255
+ ipv6 address 2004:6:6:6::6/128
+!
+interface GigabitEthernet0/1
+ no shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/1.16
+ encapsulation dot1Q 16
+ ip address 128.10.16.6 255.255.255.0
+ ipv6 address 2004:128:10:16::6/64
+!
+interface GigabitEthernet0/1.46
+ encapsulation dot1Q 46
+ vrf forwarding SHARED
+ ip address 128.10.46.6 255.255.255.0
+ ipv6 address 2004:128:10:46::6/64
+!
+interface GigabitEthernet0/1.67
+ encapsulation dot1Q 67
+ ip address 128.10.67.6 255.255.255.0
+ ipv6 address 2004:128:10:67::6/64
+!
+interface GigabitEthernet0/1.216
+ encapsulation dot1Q 216
+ ip address 128.10.216.6 255.255.255.0
+ ipv6 address 2004:128:10:216::6/64

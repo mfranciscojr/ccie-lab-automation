@@ -1,0 +1,14 @@
+
+vtp domain CCIE
+vtp mode transparent
+vlan 5,7,8,9,10,22,43,58,67,79,146
+
+interface range GigabitEthernet0/0-3,GigabitEthernet1/0-1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ 
+
+
+
+
+
