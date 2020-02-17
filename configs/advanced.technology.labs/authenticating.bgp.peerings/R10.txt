@@ -41,12 +41,7 @@ interface Loopback17
  ip address 31.3.0.1 255.255.0.0
  ipv6 address 2001:31:3::1/64
 !
-interface GigabitEthernet0/1
-no ip address
-no shutdown
- negotiation auto
- cdp enable
-!
+
 interface GigabitEthernet0/1.10
  encapsulation dot1Q 10
  ip address 155.1.10.10 255.255.255.0

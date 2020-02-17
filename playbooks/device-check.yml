@@ -7,6 +7,6 @@
        port: 22
        state: started
        delay: 300
-       register: host_accessible
-       failed_when: False
        sleep: 10
+#      register: host_accessible
+#      failed_when: False

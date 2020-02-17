@@ -33,11 +33,6 @@ interface Tunnel0
  tunnel key 150
  tunnel protection ipsec profile DMVPN_PROFILE
 !
-interface GigabitEthernet0/1
- no ip address
- negotiation auto
- cdp enable
-!
 interface GigabitEthernet0/1.23
  encapsulation dot1Q 23
  ip address 155.1.23.2 255.255.255.0

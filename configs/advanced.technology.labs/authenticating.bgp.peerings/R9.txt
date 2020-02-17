@@ -79,13 +79,7 @@ interface Loopback2121821
 !
 interface Loopback2121831
  ip address 212.18.3.1 255.255.255.0
-!
-interface GigabitEthernet0/1
-no ip address
-no shutdown
- negotiation auto
- cdp enable
-!
+
 interface GigabitEthernet0/1.9
  encapsulation dot1Q 9
  ip address 155.1.9.9 255.255.255.0

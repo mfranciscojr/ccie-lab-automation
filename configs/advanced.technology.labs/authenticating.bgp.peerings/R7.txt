@@ -5,9 +5,6 @@ interface Loopback0
  ipv6 address 2001:150:7:7::7/128
  ip address 150.1.7.7 255.255.255.255
 !
-interface GigabitEthernet0/1
- cdp enable
- no shutdown
 !
 interface GigabitEthernet0/1.7
  encapsulation dot1q 7

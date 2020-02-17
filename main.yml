@@ -22,7 +22,7 @@
  - name: Start All Nodes
    include: playbooks/start_allnodes.yml
    tags:
-    - wipe_nodes
+    - start_allnodes
 
  - name: Deploy configs
    hosts: router_group1
