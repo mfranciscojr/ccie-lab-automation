@@ -6,13 +6,13 @@
    become: yes
    tasks:
    
-    - name: Copy Lab
+    - name: Copy Lab to Eve-ng Lab Folder
       copy:
        src: ../labs/INE_CCIE.unl
        dest: /opt/unetlab/labs/INE_CCIE.unl
        mode: 777
        
-    - name: Make my directory tree readable
+    - name: Make lab directory tree readable
       file:
        path: /opt/unetlab/labs
        mode: u=rwX,g=rX,o=rX
