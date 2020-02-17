@@ -1,4 +1,7 @@
 ---
+ - name: Wipe and Start Node
+   include: playbooks/reset-and-start1.yml
+   
  - name: Copy Lab
    hosts: r1-r10
    roles: 
