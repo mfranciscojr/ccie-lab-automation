@@ -2,11 +2,6 @@
  - name: Wipe and Start Node
    include: playbooks/reset-and-start1.yml
 
- - name: Wait 600 seconds for target connection to become reachable/usable
-   wait_for:
-     port: 22
-     delay: 10
-
  - name: Copy Lab
    hosts: r1,r2,r3,r4,r5,r6,r7,r8,r9,r10
    roles: 
