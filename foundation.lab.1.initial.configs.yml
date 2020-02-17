@@ -1,4 +1,0 @@
- - name: Deploy configs
-   hosts: router_group1
-   roles:
-    - foundation.lab.1.initial.configs

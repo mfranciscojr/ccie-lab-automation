@@ -54,6 +54,5 @@ router bgp 3
   neighbor 2001:100:1:35::5 activate
   neighbor 2001:100:1:39::9 activate
  exit-address-family
-!
-end
+
 

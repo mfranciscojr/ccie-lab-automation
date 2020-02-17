@@ -7,8 +7,6 @@
 
     - name: Login to API
       script: api_login.sh
-    - name: RESET CONFIG TO DEFAULT
-      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/wipe'
     - name: Start R1
       shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/1/start'
     - name: Start R2
@@ -31,16 +29,3 @@
       shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/10/start'
     - name: Logout API
       shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/auth/logout'
- - name: Wait for host
-   hosts: 
-   tasks:
-    - name: Pre-Check if host is reachable
-      wait_for:
-       hosts: all
-       port: 22
-       state: started
-       delay: 300
-       register: host_accessible
-       failed_when: False
-       sleep: 10
-       hosts: r1
