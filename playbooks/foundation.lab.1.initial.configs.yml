@@ -1,0 +1,4 @@
+---
+ - name: Deploy configs
+   roles: 
+    - ../roles/foundation.lab.1.initial.configs

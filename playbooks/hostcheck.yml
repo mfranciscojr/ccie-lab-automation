@@ -1,11 +1,6 @@
 ---
- - name: Reset and restart Router 1 to 10
-   hosts: localhost
-   connection: local
-   gather_facts: False
-
  - name: Wait for host
-   hosts: 
+   hosts: all
    tasks:
     - name: Pre-Check if host is reachable
       wait_for:
@@ -16,4 +11,5 @@
        register: host_accessible
        failed_when: False
        sleep: 10
-       hosts: r1
+      register: ok
+      failed_when: false

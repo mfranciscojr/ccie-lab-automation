@@ -1,15 +1,4 @@
----
- - name: Wipe and Start Node
-   include: playbooks/reset-and-start1.yml
-
-
-
-    - name: Deploy configs
-      include: foundation.lab.1.initial.configs
-      when: host_accessible.state is defined and host_accessible.state == "started"
-
-
- - name: Copy Lab
-   hosts: r1,r2,r3,r4,r5,r6,r7,r8,r9,r10
-   roles: 
+ - name: Deploy configs
+   hosts: all
+   roles:
     - foundation.lab.1.initial.configs
