@@ -3,64 +3,64 @@
  - name: Gather Minimum Facts
    ios_facts:
     gather_subset: min
+    timeout: 30
 
  - name: Configure R1
    when: ansible_net_hostname == 'R1'
    ios_config:
-    src: ./roles/foundation.lab.1.initial.configs/files/r1.txt
+    src: ../configs/advanced.foundation.labs/foundation.lab.3.initial.configs/R1.txt
     save_when: modified
 
  - name: Configure R2
    when: ansible_net_hostname == 'R2'
    ios_config:
-    src: ./roles/foundation.lab.1.initial.configs/files/r2.txt
+    src: ../configs/advanced.foundation.labs/foundation.lab.3.initial.configs/R2.txt
     save_when: modified
     
  - name: Configure R3
    when: ansible_net_hostname == 'R3'
    ios_config:
-    src: ./roles/foundation.lab.1.initial.configs/files/r3.txt
+    src: ../configs/advanced.foundation.labs/foundation.lab.3.initial.configs/R3.txt
     save_when: modified
 
  - name: Configure R4
    when: ansible_net_hostname == 'R4'
    ios_config:
-    src: ./roles/foundation.lab.1.initial.configs/files/r4.txt
+    src: ../configs/advanced.foundation.labs/foundation.lab.3.initial.configs/R4.txt
     save_when: modified
 
  - name: Configure R5
    when: ansible_net_hostname == 'R5'
    ios_config:
-    src: ./roles/foundation.lab.1.initial.configs/files/r5.txt
+    src: ../configs/advanced.foundation.labs/foundation.lab.3.initial.configs/R5.txt
     save_when: modified
 
  - name: Configure R6
    when: ansible_net_hostname == 'R6'
    ios_config:
-    src: ./roles/foundation.lab.1.initial.configs/files/r6.txt
+    src: ../configs/advanced.foundation.labs/foundation.lab.3.initial.configs/R6.txt
     save_when: modified
 
  - name: Configure R7
    when: ansible_net_hostname == 'R7'
    ios_config:
-    src: ./roles/foundation.lab.1.initial.configs/files/r7.txt
+    src: ../configs/advanced.foundation.labs/foundation.lab.3.initial.configs/R7.txt
     save_when: modified
 
  - name: Configure R8
    when: ansible_net_hostname == 'R8'
    ios_config:
-    src: ./roles/foundation.lab.1.initial.configs/files/r8.txt
+    src: ../configs/advanced.foundation.labs/foundation.lab.3.initial.configs/R8.txt
     save_when: modified
 
  - name: Configure R9
    when: ansible_net_hostname == 'R9'
    ios_config:
-    src: ./roles/foundation.lab.1.initial.configs/files/r9.txt
+    src: ../configs/advanced.foundation.labs/foundation.lab.3.initial.configs/R9.txt
     save_when: modified
 
  - name: Configure R10
    when: ansible_net_hostname == 'R10'
    ios_config:
-    src: ./roles/foundation.lab.1.initial.configs/files/r10.txt
+    src: ../configs/advanced.foundation.labs/foundation.lab.3.initial.configs/R10.txt
     save_when: modified
-                

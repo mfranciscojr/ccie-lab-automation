@@ -1,0 +1,21 @@
+
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+vlan access-map vacl 10
+ action drop
+!
+vlan filter vacl vlan-list 1-4094
+!
+interface Loopback0
+ ip address 21.21.21.21 255.255.255.255
+ ipv6 address 2004:21:21:21::21/128
+!
+interface Vlan216
+ ip address 128.10.216.21 255.255.255.0
+ ipv6 address 2004:128:10:216::21/64

@@ -1,5 +1,5 @@
 ---
- - name: Reset and restart Router 1 to 10
+ - name: Wipe Device Configurations
    hosts: localhost
    connection: local
    gather_facts: False

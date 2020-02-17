@@ -1,0 +1,17 @@
+interface Loopback0
+ ip address 8.8.8.8 255.255.255.255
+ ipv6 address 2004:8:8:8::8/128
+!
+interface GigabitEthernet0/1
+ no shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/1.123
+ encapsulation dot1Q 123
+ ip address 128.10.123.8 255.255.255.0
+ ipv6 address 2004:128:10:123::8/64
+!
+interface GigabitEthernet2
+ vrf forwarding MGMT_DO_NOT_CHANGE
+ ip address 192.168.1.8 255.255.255.0
+ negotiation auto

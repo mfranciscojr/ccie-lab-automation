@@ -1,5 +1,5 @@
 ---
- - name: Reset and restart Router 1 to 10
+ - name: Start R1 to R10
    hosts: localhost
    connection: local
    gather_facts: False

@@ -24,10 +24,30 @@
    tags:
     - wipe_nodes
 
-
  - name: Deploy configs
    hosts: router_group1
    roles:
     - foundation_lab1_initial
    tags:
     - initial_1
+
+ - name: Deploy configs
+   hosts: router_group1
+   roles:
+    - foundation_lab2_initial
+   tags:
+    - initial_2
+
+ - name: Deploy configs
+   hosts: router_group1
+   roles:
+    - foundation_lab3_initial
+   tags:
+    - initial_3
+
+ - name: Deploy configs
+   hosts: router_group1
+   roles:
+    - authenticating.bgp.peerings
+   tags:
+    - authenticating.bgp.peerings
