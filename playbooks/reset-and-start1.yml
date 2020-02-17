@@ -31,3 +31,14 @@
       shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/10/start'
     - name: Logout API
       shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/auth/logout'
+ - name: Wait for host
+   tasks:
+    - name: Pre-Check if host is reachable
+      wait_for:
+       port: 22
+       state: started
+       delay: 300
+       register: host_accessible
+       failed_when: False
+       sleep: 10
+       hosts: r1,r2,r3,r4,r5,r6,r7,r8,r9,r10
