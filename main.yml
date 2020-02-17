@@ -4,6 +4,11 @@
    tags:
     - copylab
 
+ - name: Device Check
+   include: playbooks/device-check.yml
+   tags:
+    - device_check
+
  - name: Reset Lab to Default
    include: playbooks/wipe_nodes.yml
    tags:
