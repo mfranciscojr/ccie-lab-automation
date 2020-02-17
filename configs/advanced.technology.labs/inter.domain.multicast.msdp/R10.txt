@@ -1,0 +1,98 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ip multicast-routing distributed
+
+
+
+
+ 
+interface Loopback0
+ ip address 150.1.10.10 255.255.255.255
+ ipv6 address 2001:150:10:10::10/128
+ ip pim sparse-mode
+
+interface GigabitEthernet0/1
+ 
+ 
+
+
+
+interface GigabitEthernet0/1.10
+ encapsulation dot1Q 10
+ ip address 155.1.10.10 255.255.255.0
+ ipv6 address 2001:155:1:10::10/64
+ ip pim sparse-mode
+
+
+interface GigabitEthernet0/1.108
+ encapsulation dot1Q 108
+ ip address 155.1.108.10 255.255.255.0
+ ipv6 address 2001:155:1:108::10/64
+ ip pim sparse-mode
+
+
+router ospf 1
+ network 150.1.0.0 0.0.255.255 area 0
+ network 155.1.0.0 0.0.255.255 area 0
+
+router bgp 200
+ neighbor 150.1.5.5 remote-as 200
+ neighbor 150.1.5.5 update-source Loopback0
+
+address-family ipv4 multicast
+ neighbor 150.1.5.5 activate 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

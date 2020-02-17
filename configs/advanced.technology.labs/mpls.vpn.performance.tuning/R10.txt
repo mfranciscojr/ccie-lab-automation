@@ -1,0 +1,157 @@
+
+
+
+
+
+
+
+Current configuration : 1779 bytes
+
+ Last configuration change at 19:53:29 UTC Sat May 10 2014
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+interface Loopback0
+ ip address 150.1.10.10 255.255.255.255
+ ipv6 address 2001:150:10:10::10/128
+
+interface GigabitEthernet0/1
+ 
+
+
+
+interface GigabitEthernet0/1.10
+ encapsulation dot1Q 10
+ ip address 155.1.10.10 255.255.255.0
+ ipv6 address 2001:155:1:10::10/64
+
+interface GigabitEthernet0/1.106
+ encapsulation dot1Q 106
+ ip address 160.1.106.10 255.255.255.0
+
+interface GigabitEthernet0/1.108
+ encapsulation dot1Q 108
+ ip address 155.1.108.10 255.255.255.0
+ ipv6 address 2001:155:1:108::10/64
+
+
+ 
+ 
+
+
+
+ 
+ 
+
+
+router bgp 106
+ bgp log-neighbor-changes
+ network 150.1.10.10 mask 255.255.255.255
+ neighbor 160.1.106.6 remote-as 100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R10#
+
+

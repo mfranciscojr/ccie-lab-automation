@@ -1,0 +1,41 @@
+
+
+
+
+
+
+
+
+
+
+
+vtp domain CCIE
+vtp mode client
+
+
+
+
+spanning-tree vlan 1-4094 priority 16384
+
+
+interface range FastEthernet0/19 - 20
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+
+interface range FastEthernet0/21 - 23
+ 
+
+interface FastEthernet0/24
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+
+
+
+
+
+
+
+
+
+
+
