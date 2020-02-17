@@ -1,0 +1,5 @@
+---
+ - name: Copy Lab
+   hosts: r1-r10
+   roles: 
+    - foundation.lab.1.initial.configs
