@@ -1,9 +1,5 @@
 ---
 # tasks file for foundation.lab.1.initial.configs
- - name: wait for
-   pause: 
-    minutes: 5
-    
  - name: Gather Minimum Facts
    ios_facts:
     gather_subset: min
