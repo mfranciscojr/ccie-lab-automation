@@ -1,10 +1,95 @@
 ---
 # tasks file for foundation.lab.1.initial.configs
 
-- name: Loading Lab
+- name: Preparing Your Lab! Wiping and Re-staring Nodes
+  hosts: localhost
+  gather_facts: false
+  tasks:
+
+   - name: Powering UP!!!
+     script: ../playbooks/_startnodes.sh
+     register: status
+
+   - debug:
+      msg: msg="{{ status.stdout }}"
+
+- name: Wait for Connection, this could take a while depending on your system, prepare some coffee first
+  hosts: router_group1
+  gather_facts: false
+  tasks:
+   
+   - name: Waiting! but not in vain!
+     wait_for_connection:
+      delay: 60
+      timeout: 300
+
+- name: Configuring Your Devices
   hosts: router_group1
   gather_facts: false
   tasks:
 
-   - name: starting nodes
-     script: ../playbooks/_startnodes.sh
+   - name: Gather Minimum Facts
+     ios_facts:
+       gather_subset: min
+       timeout: 30
+
+   - name: Firing up R1
+     when: ansible_net_hostname == 'R1'
+     ios_config:
+      src: ../configs/advanced.foundation.labs/foundation.lab.2.initial.configs/r1.txt
+      save_when: modified
+
+   - name: Arming up R2
+     when: ansible_net_hostname == 'R2'
+     ios_config:
+      src: ../configs/advanced.foundation.labs/foundation.lab.2.initial.configs/r2.txt
+      save_when: modified
+
+   - name: Loading ammo errr configs on R3
+     when: ansible_net_hostname == 'R3'
+     ios_config:
+      src: ../configs/advanced.foundation.labs/foundation.lab.2.initial.configs/r3.txt
+      save_when: modified
+
+   - name: R4 is revving up!
+     when: ansible_net_hostname == 'R4'
+     ios_config:
+      src: ../configs/advanced.foundation.labs/foundation.lab.2.initial.configs/r4.txt
+      save_when: modified
+
+   - name: Yey! R5 have been configured
+     when: ansible_net_hostname == 'R5'
+     ios_config:
+      src: ../configs/advanced.foundation.labs/foundation.lab.2.initial.configs/r5.txt
+      save_when: modified
+
+   - name: R6 is getting ready to rumble!
+     when: ansible_net_hostname == 'R6'
+     ios_config:
+      src: ../configs/advanced.foundation.labs/foundation.lab.2.initial.configs/r6.txt
+      save_when: modified
+
+   - name: R7 if lifting off
+     when: ansible_net_hostname == 'R7'
+     ios_config:
+      src: ../configs/advanced.foundation.labs/foundation.lab.2.initial.configs/r7.txt
+      save_when: modified
+
+   - name: R8 gearing up!
+     when: ansible_net_hostname == 'R8'
+     ios_config:
+      src: ../configs/advanced.foundation.labs/foundation.lab.2.initial.configs/r8.txt
+      save_when: modified
+
+   - name: Woooaaah R9 have an epic comeback
+     when: ansible_net_hostname == 'R9'
+     ios_config:
+      src: ../configs/advanced.foundation.labs/foundation.lab.2.initial.configs/r9.txt
+      save_when: modified
+
+   - name: Hasta la vista!
+     when: ansible_net_hostname == 'R10'
+     ios_config:
+      src: ../configs/advanced.foundation.labs/foundation.lab.2.initial.configs/r10.txt
+      save_when: modified
+

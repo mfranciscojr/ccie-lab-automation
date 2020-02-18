@@ -3,8 +3,6 @@ interface Loopback0
  ipv6 address 2001:6:6:6::6/128
 !
 interface GigabitEthernet0/1
- no shutdown
- negotiation auto
 !
 interface GigabitEthernet0/1.46
  encapsulation dot1Q 46
