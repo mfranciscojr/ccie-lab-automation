@@ -1,0 +1,10 @@
+---
+# tasks file for foundation.lab.1.initial.configs
+
+- name: Loading Lab
+  hosts: router_group1
+  gather_facts: false
+  tasks:
+
+   - name: starting nodes
+     script: ../playbooks/_startnodes.sh
