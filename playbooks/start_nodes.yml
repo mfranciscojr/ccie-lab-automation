@@ -1,31 +1,9 @@
 ---
- - name: Start R1 to R10
+ - name: Wiping Config back to default then restarting node
    hosts: localhost
    connection: local
    gather_facts: False
    tasks:
 
-    - name: Login to API
-      script: api_login.sh
-    - name: Start R1
-      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/1/start'
-    - name: Start R2
-      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/2/start'
-    - name: Start R3
-      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/3/start'
-    - name: Start R4
-      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/4/start'
-    - name: Start R5
-      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/5/start'
-    - name: Start R6
-      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/6/start'
-    - name: Start R7
-      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/7/start'
-    - name: Start R8
-      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/8/start'
-    - name: Start R9
-      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/9/start'
-    - name: Start R10
-      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/10/start'
-    - name: Logout API
-      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/auth/logout'
+    - name: Doing my task master!! Please Wait!!
+      script: _startnodes.sh
