@@ -8,11 +8,7 @@ vrf definition 1
  !
  address-family ipv6
  exit-address-family
-!
-no ip domain lookup
-!
-ipv6 unicast-routing
-!
+
 interface Loopback0
  vrf forwarding 1
  ip address 4.4.4.4 255.255.255.255
