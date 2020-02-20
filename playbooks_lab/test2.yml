@@ -7,7 +7,7 @@
   tasks:
 
    - name: Powering UP!!!
-     script: ../playbooks/_startnodes.sh
+     script: ../scripts/_startnodes.sh
      register: status
 
    - debug:
@@ -21,4 +21,4 @@
    - name: Waiting! but not in vain!
      wait_for_connection:
       delay: 60
-      timeout: 300
+      timeout: 600
